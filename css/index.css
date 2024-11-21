@@ -1,26 +1,32 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    /* background-image: url("../imgs/WSE.png");
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position-y: 20%;
+}
+.indexBody{
 
-
-    background-position-x: 100%; */
 }
 .container {
     display: flex;
     height: 100vh;
     width: 100%;
 
-
+    
+}
+.containerIndex{
+    background-image: url("../imgs/WSE.png");
+    background-size: 90% 100%;
+    background-position-x: 250%;
 }
 .left-section {
-    background-color: #002060;
+
+    background-image: url("../imgs/VC3.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 20px;
-    width: 40%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,9 +63,7 @@ body {
     left: 20px;
 }
 .right-section {
-    background-image: url("../imgs/WSE.png");
-    background-size: cover;
-    background-position: center;
+  
     width: 70%;
     background-position-x: 40%;
     position: relative;
@@ -104,8 +108,6 @@ footer{
     justify-content: space-between;
     color: white;
     align-items: flex-end;
-
-
 }
 footer p{
 
@@ -117,11 +119,22 @@ footer p{
 }
 
 .header{
+    background-image: url("../imgs/FESS.png");
+    background-size: 100% 100%;
+    
     position: relative;
     width: 100%;
     height: 100px;
     top: 0;
     color: white;
     font-size: xx-large;
-    background-color: #002060;
+    /* background-color: #002060; */
+
+  
+}
+.header p{
+    margin: 0px;
+    padding-top: 2%;
+    padding-left: 1%;
+    font-size: 1.5rem;
 }

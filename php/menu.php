@@ -15,14 +15,14 @@ include "../informacion.php";
     <link rel="stylesheet" href="../css/menu.css">
 </head>
 
-<body>
+<body class="body2">
 
     <div class="header">
-        <p class="footer__estatus">Estatus De la Conexión:<span style="color:red;">
+        <p class="footer__estatus">Estatus De la Conexión a servidor:<span style="color:red;">
                 <?php echo $connection_status; ?></span></p>
     </div>
 
-    <div class="container">
+    <div class="container containerMenu">
         <div class="left">
             <div class="userInfo">
                 <img src="../imgs/lalaIcon.png" class="lalaIcon">
@@ -33,11 +33,11 @@ include "../informacion.php";
 
         </div>
         <div class="right">
-            <a href=""><img src="../imgs/Q3.png" alt="" srcset="" class="options"></a>
-            <a href=""><img src="../imgs/Q2.png" alt="" srcset="" class="options"></a>
-            <a href=""><img src="../imgs/Q1.png" alt="" srcset="" class="options"></a>
-            <a href=""><img src="../imgs/Q5.png" alt="" srcset="" class="options"></a>
-            <a href=""><img src="../imgs/Q4.png" alt="" srcset="" class="options"></a>
+            <a href=""><img src="../imgs/Q3.png" alt="" class="options"></a>
+            <a href=""><img src="../imgs/Q2.png" alt="" class="options"></a>
+            <a href="registro.php"><img src="../imgs/Q1.png" alt="" class="options"></a>
+            <a href=""><img src="../imgs/Q5.png" alt="" class="options"></a>
+            <a href=""><img src="../imgs/Q4.png" alt="" class="options"></a>
         </div>
 
     </div>

@@ -11,8 +11,8 @@ include "informacion.php";
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
-<body>
-    <div class="container">
+<body class = "indexBody">
+    <div class="container containerIndex">
         <div class="left-section">
             <form action="login.php" method="POST">
                 <input placeholder="Usuario" type="text" name="username" required name="usuario" />
