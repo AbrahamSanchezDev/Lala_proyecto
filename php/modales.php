@@ -10,39 +10,37 @@
                 <form action="agregar_carta_porte.php" method="post">
                     <input type="hidden" name="action" value="agregar">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre de Empleado</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        <label for="operador" class="form-label">Operador</label>
+                        <input type="text" class="form-control" id="operador" name="operador" required>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="placa_de_transporte" class="form-label">Placa de Transporte</label>
+                        <input type="text" class="form-control" id="placa_de_transporte" name="placa_de_transporte" required>
                     </div>
                     <div class="mb-3">
-                        <label for="folio" class="form-label">Número de Folio</label>
-                        <input type="text" class="form-control" id="folio" name="folio" required>
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modelo" name="modelo" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaPrestamo" class="form-label">Fecha de Préstamo</label>
-                        <input type="date" class="form-control" id="fechaPrestamo" name="fechaPrestamo" required>
+                        <label for="ciudad_origen" class="form-label">Ciudad de Origen</label>
+                        <input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaEntrega" class="form-label">Fecha de Entrega</label>
-                        <input type="date" class="form-control" id="fechaEntrega" name="fechaEntrega" required>
+                        <label for="fecha_de_salida" class="form-label">Fecha de Salida</label>
+                        <input type="date" class="form-control" id="fecha_de_salida" name="fecha_de_salida" required>
                     </div>
                     <div class="mb-3">
-                        <label for="estado" class="form-label">Estado</label>
-                        <select class="form-select" id="estado" name="estado" required>
-                            <option value="Entregado">Entregado</option>
-                            <option value="Pendiente">Pendiente</option>
-                        </select>
+                        <label for="hora_de_salida_de_transporte" class="form-label">Hora de Salida de Transporte</label>
+                        <input type="time" class="form-control" id="hora_de_salida_de_transporte" name="hora_de_salida_de_transporte" required>
                     </div>
                     <div class="mb-3">
-                        <label for="sku" class="form-label">SKU</label>
-                        <input type="text" class="form-control" id="sku" name="sku" required>
+                        <label for="direccion_de_destino" class="form-label">Direccion de Destino</label>
+                        <input type="text" class="form-control" id="direccion_de_destino" name="direccion_de_destino" required>
                     </div>
                     <div class="mb-3">
-                        <label for="herramienta" class="form-label">Herramienta</label>
-                        <input type="text" class="form-control" id="herramienta" name="herramienta" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="cantidad" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" required>
+                        <label for="numero_de_contacto" class="form-label">Numero de Contacto</label>
+                        <input type="number" class="form-control" id="numero_de_contacto" name="numero_de_contacto" min="1" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
@@ -51,20 +49,20 @@
     </div>
 </div>
 
-<!-- Modal para Buscar por Número de Folio -->
+<!-- Modal para Buscar por ID -->
 <div class="modal fade" id="modalBuscarFolio" tabindex="-1" aria-labelledby="modalBuscarFolioLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalBuscarFolioLabel">Buscar Préstamo por Número de Folio</h5>
+                <h5 class="modal-title" id="modalBuscarFolioLabel">Buscar Préstamo por ID de Folio</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
                 <form action="registro.php" method="post">
                     <input type="hidden" name="action" value="buscarFolio">
                     <div class="mb-3">
-                        <label for="folioBuscar" class="form-label">Número de Folio</label>
-                        <input type="text" class="form-control" id="folioBuscar" name="folioBuscar" required>
+                        <label for="folioBuscar" class="form-label">ID de Folio</label>
+                        <input type="number" class="form-control" id="folioBuscar" name="folioBuscar" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
@@ -73,50 +71,47 @@
     </div>
 </div>
 
-<!-- Modal de Editar Préstamo -->
+<!-- Modal de Editar Carta Porte -->
 <?php if (isset($prestamo)): ?>
 <div class="modal fade show" id="modalEditarPrestamo" tabindex="-1" aria-labelledby="modalEditarPrestamoLabel" aria-modal="true" role="dialog" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalEditarPrestamoLabel">Editar Préstamo</h5>
+                <h5 class="modal-title" id="modalEditarPrestamoLabel">Editar Carta Porte</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
                 <form action="registro.php" method="post">
                     <input type="hidden" name="action" value="editar">
-                    <input type="hidden" name="folio" value="<?php echo htmlspecialchars($prestamo['numero_folio']); ?>">
+                    <input type="hidden" name="direccion_de_destino" value="<?php echo intval($prestamo['id']); ?>">
 
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre de Empleado</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo htmlspecialchars($prestamo['nombre_empleado']); ?>" required>
+                        <label for="operador" class="form-label">Opedador</label>
+                        <input type="text" class="form-control" id="operador" name="operador" value="<?php echo htmlspecialchars($prestamo['operador']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaPrestamo" class="form-label">Fecha de Préstamo</label>
-                        <input type="date" class="form-control" id="fechaPrestamo" name="fechaPrestamo" value="<?php echo htmlspecialchars($prestamo['fecha_prestamo']); ?>" required>
+                        <label for="placa_de_transporte" class="form-label">Placa de Transporte</label>
+                        <input type="text" class="form-control" id="placa_de_transporte" name="placa_de_transporte" value="<?php echo htmlspecialchars($prestamo['placa_de_transporte']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaEntrega" class="form-label">Fecha de Entrega</label>
-                        <input type="date" class="form-control" id="fechaEntrega" name="fechaEntrega" value="<?php echo htmlspecialchars($prestamo['fecha_entrega']); ?>" required>
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?php echo htmlspecialchars($prestamo['modelo']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="estado" class="form-label">Estado</label>
-                        <select class="form-select" id="estado" name="estado" required>
-                            <option value="Entregado" <?php echo ($prestamo['estado'] == 'Entregado') ? 'selected' : ''; ?>>Entregado</option>
-                            <option value="Pendiente" <?php echo ($prestamo['estado'] == 'Pendiente') ? 'selected' : ''; ?>>Pendiente</option>
-                        </select>
+                        <label for="ciudad_origen" class="form-label">Ciudad Origen</label>
+                        <input type="text" class="form-control" id="ciudad_origen" name="ciudad_origen" value="<?php echo htmlspecialchars($prestamo['ciudad_origen']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="sku" class="form-label">SKU</label>
-                        <input type="text" class="form-control" id="sku" name="sku" value="<?php echo htmlspecialchars($prestamo['sku']); ?>" required>
+                        <label for="fecha_de_salida" class="form-label">Fecha de Salida</label>
+                        <input type="date" class="form-control" id="fecha_de_salida" name="fecha_de_salida" value="<?php echo htmlspecialchars($prestamo['fecha_de_salida']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="herramienta" class="form-label">Herramienta</label>
-                        <input type="text" class="form-control" id="herramienta" name="herramienta" value="<?php echo htmlspecialchars($prestamo['herramienta']); ?>" required>
+                        <label for="hora_de_salida_de_transporte" class="form-label">Hora de Salida de Transporte</label>
+                        <input type="time" class="form-control" id="hora_de_salida_de_transporte" name="hora_de_salida_de_transporte" value="<?php echo htmlspecialchars($prestamo['hora_de_salida_de_transporte']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="cantidad" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control" id="cantidad" name="cantidad" value="<?php echo htmlspecialchars($prestamo['cantidad']); ?>" min="1" required>
+                        <label for="numero_de_contacto" class="form-label">Numero de Contacto</label>
+                        <input type="number" class="form-control" id="numero_de_contacto" name="numero_de_contacto" value="<?php echo htmlspecialchars($prestamo['numero_de_contacto']); ?>" min="1" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 </form>
@@ -135,11 +130,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
-                <form action="eliiminar_prestamo.php" method="post">
+                <form action="eliminar_carta_porte.php" method="post">
                     <input type="hidden" name="action" value="eliminar">
                     <div class="mb-3">
                         <label for="folioEliminar" class="form-label">Número de Folio</label>
-                        <input type="text" class="form-control" id="folioEliminar" name="folioEliminar" required>
+                        <input type="number" class="form-control" id="folioEliminar" name="folioEliminar" required>
                     </div>
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>

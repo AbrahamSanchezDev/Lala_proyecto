@@ -1,7 +1,7 @@
 <?php
 
 include "../informacion.php";
-
+include "registro_load.php";
 ?>
 
 <!DOCTYPE html>
