@@ -36,7 +36,6 @@
 }
 
 .footer p {
-
   padding: 20px 50px;
   margin-top: 25%;
   font-size: 1rem;
@@ -45,10 +44,8 @@
 }
 
 .container {
-
   height: 85.5vh;
 }
-
 
 .form-section {
   margin: 10px 10px;
@@ -76,8 +73,6 @@
   border-radius: 5px;
   margin-right: 10px;
 }
-
-
 
 .print-button {
   background-color: white;
@@ -189,10 +184,7 @@ body {
   margin-left: 78%;
   width: 10%;
   right: 0;
-
 }
-
-
 
 .icons {
   display: flex;
@@ -212,4 +204,21 @@ body {
 
 .icons img:hover {
   cursor: pointer;
+}
+
+.printer {
+  margin-left: 5%;
+  margin-top: 50px;
+  width: 85%;
+}
+.printerIcon {
+  width: 10%;
+}
+.printerText {
+  background-image: url("../imgs/FESS.png");
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  color: white;
+  padding: 5px 5%;
 }

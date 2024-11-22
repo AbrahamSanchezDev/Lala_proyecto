@@ -16,15 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     switch ($action) {
         case 'buscarFolio':
-            echo "buscarFolio START -"; 
-            echo $id;
             $stmt = $conn->prepare("SELECT * FROM carta_porte WHERE id = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-                $prestamo = $result->fetch_assoc(); // Guardar datos del préstamo para prellenar el formulario de edición
+                // Guardar datos del resultado para prellenar el formulario de edición
+                $carta_porte_resultado = $result->fetch_assoc(); 
             } else {
                 echo $id;
                 $error = "No se encontró el placa_de_transporte.";
@@ -42,6 +41,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit();
             }
             break;
+            case "imprimir":
+                $id = mysqli_real_escape_string($conn, $_POST['imprimirFolio'] ?? '');
+                $doPrint = true;
+                $printAll = ($id == 0);
+                if($printAll == false){
+                    $stmt = $conn->prepare("SELECT * FROM carta_porte WHERE id = ?");
+                    $stmt->bind_param("i", $id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+        
+                    if ($result->num_rows > 0) {
+                        // Guardar datos del resultado para prellenar el formulario de edición
+                        $carta_porte_a_imprimir = $result->fetch_assoc(); 
+                    } else {
+                        echo $id;
+                        $error = "No se encontró el placa_de_transporte.";
+                    }
+                    $stmt->close();
+                }
+                break;
     }
 }
 ?>
