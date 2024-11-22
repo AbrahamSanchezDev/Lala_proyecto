@@ -9,7 +9,6 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>Folio de carta porte</th>
                     <th>Operador</th>
                     <th>Placa de Transporte</th>
                     <th>Modelo</th>
@@ -29,7 +28,6 @@
                       echo "<tr>";
                       echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                       echo "<td>" . htmlspecialchars($row['operador']) . "</td>";
-                      echo "<td>" . htmlspecialchars($row['folio_de_carta_porte']) . "</td>";
                       echo "<td>" . htmlspecialchars($row['placa_de_transporte']) . "</td>";
                       echo "<td>" . htmlspecialchars($row['modelo']) . "</td>";
                       echo "<td>" . htmlspecialchars($row['ciudad_origen']) . "</td>";

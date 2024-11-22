@@ -61,21 +61,3 @@ thead {
     background-color: #4a90e2;
     color: white;
 }
-
-.icons {
-    position: absolute;
-    right: 0px;
-    margin-top: 100px;
-    margin-right: 40px;
-
-}
-
-.icons a {
-    height: 50px;
-    width: 50px;
-}
-
-.icons img {
-    height: 50px;
-    width: 50px;
-}
