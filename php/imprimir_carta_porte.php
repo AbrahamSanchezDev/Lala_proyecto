@@ -14,7 +14,16 @@
     function printTable() {
         // Selecciona la tabla que deseas imprimir
         const table = document.querySelector('.table-container').innerHTML;
-
+        const headerHTML = `
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="../imgs/SEPRADO.png" alt="Logo" style="width: 150px; height: auto;">
+            <h1 style="font-size: 24px; margin: 10px 0;">LISTA DE CARTA PORTES</h1>
+            <p style="font-size: 14px; margin: 5px 0;">
+                Av. Irapuato 1790, Ciudad. Industrial Irapuato, <br>
+                36541 Irapuato, Gto.
+            </p>
+        </div>
+        `;
         // Abre una nueva ventana de impresión
         const printWindow = window.open('', '', 'height=500,width=800');
         printWindow.document.write('<html><head><title>Imprimir Tabla</title>');
@@ -23,6 +32,7 @@
         printWindow.document.write('th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }');
         printWindow.document.write('th { background-color: #f2f2f2; }');
         printWindow.document.write('</style></head><body>');
+        printWindow.document.write(headerHTML);
         printWindow.document.write(table);
         printWindow.document.write('</body></html>');
 
@@ -131,7 +141,7 @@
                 36541 Irapuato, Gto.
             </p>
         </div>
-    `;
+        `;
         // Abre una nueva ventana de impresión
         const printWindowElement = window.open('', '', 'height=500,width=800');
 
